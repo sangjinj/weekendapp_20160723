@@ -45,10 +45,11 @@ public class MainActivity extends Activity implements View.OnClickListener{
         btCount.setOnClickListener(this);
         btLogin.setOnClickListener(this);
 
+        // 이건 초기에 넣고 읽어 드리는 테스트 입니다.
 
         dbOpenHelper helper = new dbOpenHelper(this);
         SQLiteDatabase db = helper.getReadableDatabase();
-        // db.execSQL("insert into member(name, pwd) values ('sangjinj01', 'pwd01');");
+        //db.execSQL("insert into member(name, pwd) values ('sangjinj01', 'pwd01');");
         //db.execSQL("insert into member(id, pw, name, email, phone, photo, addr) values ('abcd1234', '1111', '정상진01', 'sangjinj7@gmail.com','010-6426-3539','--','addr01' );");
         System.out.println("############################################################################## ::::::" + db.getPath());
         Cursor rs = db.rawQuery("select * from member;", null);
@@ -57,8 +58,6 @@ public class MainActivity extends Activity implements View.OnClickListener{
         while(rs.moveToNext()){
             System.out.println("name ::::::::::::::::: "+rs.getString(0));
             System.out.println("pw ::::::::::::::::: "+rs.getString(1));
-
-
         }
 
     }
