@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.hanbit.user.weekendapp.R;
+import com.hanbit.user.weekendapp_20160723.R;
 
 public class LoginActivity extends Activity implements View.OnClickListener{
     EditText etID,etPW;

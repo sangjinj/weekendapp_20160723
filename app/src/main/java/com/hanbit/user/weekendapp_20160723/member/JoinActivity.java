@@ -8,8 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.hanbit.user.weekendapp.MainActivity;
-import com.hanbit.user.weekendapp.R;
+import com.hanbit.user.weekendapp_20160723.MainActivity;
+import com.hanbit.user.weekendapp_20160723.R;
 
 public class JoinActivity extends Activity implements View.OnClickListener  {
     EditText etID,etPW,etName,etEmail,etPhone, etPhoto, etAddr;

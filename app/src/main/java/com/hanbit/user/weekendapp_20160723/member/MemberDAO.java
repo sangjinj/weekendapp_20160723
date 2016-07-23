@@ -5,7 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import com.hanbit.user.weekendapp.dbhelper.dbOpenHelper;
+import com.hanbit.user.weekendapp_20160723.dbhelper.dbOpenHelper;
 
 import java.util.ArrayList;
 import java.util.List;
