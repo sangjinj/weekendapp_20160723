@@ -3,7 +3,6 @@ import android.content.Context;
 import android.util.Log;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by hb on 2016-07-23.
@@ -11,7 +10,6 @@ import java.util.List;
 public class MemberServiceImpl implements MemberService{
     Context context;
     MemberDAO dao;
-
 
     public MemberServiceImpl(Context context) {
         dao = new MemberDAO(context);

@@ -33,7 +33,6 @@ public class MemberAdapter extends BaseAdapter {
     public MemberAdapter(Context context, ArrayList<MemberBean> list){
         this.list = list;
         this.inflater = LayoutInflater.from(context);
-
     }
     @Override
     public int getCount() {
