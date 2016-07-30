@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.hanbit.user.weekendapp_20160723.dbhelper.dbOpenHelper;
+import com.hanbit.user.weekendapp_20160723.member.AddActivity;
 import com.hanbit.user.weekendapp_20160723.member.CountActivity;
 import com.hanbit.user.weekendapp_20160723.member.FindActivity;
 import com.hanbit.user.weekendapp_20160723.member.JoinActivity;
@@ -78,7 +79,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 break;
             case R.id.btAdd :
                 Toast.makeText(MainActivity.this,"btAdd",Toast.LENGTH_LONG).show();
-                this.startActivity(new Intent(this, LoginActivity.class));
+                this.startActivity(new Intent(this, AddActivity.class));
                 break;
             case R.id.btDelete :
                 Toast.makeText(MainActivity.this,"btDelete",Toast.LENGTH_LONG).show();

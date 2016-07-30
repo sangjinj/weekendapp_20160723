@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.hanbit.user.weekendapp_20160723.R;
@@ -16,23 +15,11 @@ import java.util.ArrayList;
 /**
  * Created by 1027 on 2016-07-30.
  */
-public class MemberAdapter extends BaseAdapter {
+public class GuestAdapter extends BaseAdapter {
     ArrayList<MemberBean> list;
     LayoutInflater inflater;
-    private int[] photos={
-            R.drawable.cupcake,
-            R.drawable.donut,
-            R.drawable.eclair,
-            R.drawable.froyo,
-            R.drawable.gingerbread,
-            R.drawable.honeycomb,
-            R.drawable.icecream,
-            R.drawable.jellybean,
-            R.drawable.kitkat,
-            R.drawable.lollipop,
-            R.drawable.chrysanthemum
-    };
-    public MemberAdapter(Context context,ArrayList<MemberBean> list) {
+
+    public GuestAdapter(Context context, ArrayList<MemberBean> list) {
         this.list = list;
         this.inflater = LayoutInflater.from(context);
     }
@@ -58,7 +45,6 @@ public class MemberAdapter extends BaseAdapter {
         if(v==null){
             v = inflater.inflate(R.layout.member_list,null);
             holder = new ViewHolder();
-            holder.ivPhoto = (ImageView) v.findViewById(R.id.iv_photo);
             holder.tvName = (TextView) v.findViewById(R.id.tv_name);
             holder.tvPhone = (TextView) v.findViewById(R.id.tv_phone);
             v.setTag(holder);
@@ -66,14 +52,12 @@ public class MemberAdapter extends BaseAdapter {
             holder = (ViewHolder) v.getTag();
         }
         Log.d("어답터에서 체크한 이름["+i+"]",list.get(i).getName());
-//        holder.ivPhoto.setImageResource(photos[i]);
         holder.tvName.setText(list.get(i).getName());
         holder.tvPhone.setText(list.get(i).getPhone());
         return v;
     }
     // inner class
     static class ViewHolder{
-        ImageView ivPhoto;
         TextView tvName;
         TextView tvPhone;
     }

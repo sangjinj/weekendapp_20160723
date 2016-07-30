@@ -15,50 +15,20 @@ import java.util.ArrayList;
 public class MemberDAO{
     Context context;
     dbOpenHelper helper;;
-    // id, pw, name, email, phone, photo, addr
     public static final String ID = "id";
     public static final String PW = "pw";
-        public static final String NAME = "name";
-        public static final String EMAIL = "email";
-        public static final String PHONE = "phone";
-        public static final String PHOTO = "photo";
-        public static final String ADDR = "addr";
-        public static final String TABLE_NAME = "member";
-
-        public MemberDAO(Context context) {
-//        context.getApplicationContext();
-
+    public static final String NAME = "name";
+    public static final String EMAIL = "email";
+    public static final String PHONE = "phone";
+    public static final String PHOTO = "photo";
+    public static final String ADDR = "addr";
+    public static final String TABLE_NAME = "member";
+    public MemberDAO(Context context) {
         helper = new dbOpenHelper(context);
-        //super(context, "sangjinj02.sqlite", null, 1);
         this.context = context;
-        helper = new dbOpenHelper(context);
 
     }
-//
-//    public void onCreate(SQLiteDatabase db) {
-//        System.out.println("######################### onCreate ##################################");
-//        db.execSQL("CREATE TABLE if not exist member (id text primary key, pw text, name text, email text, phone text, photo text, addr text);");
-//
-//        // 최초 디비가 생성 될때 초기 데이터를 입력 한다.
-//        db.execSQL("insert into member(id, pw, name, email, phone, photo, addr) values ('sangjinj01', '1111', '정상진01', 'sangjinj7@gmail.com','010-6426-3539','--','addr01' );");
-//        db.execSQL("insert into member(id, pw, name, email, phone, photo, addr) values ('sangjinj02', '1111', '정상진02', 'sangjinj7@gmail.com','010-6426-3539','--','addr02' );");
-//        db.execSQL("insert into member(id, pw, name, email, phone, photo, addr) values ('sangjinj03', '1111', '정상진03', 'sangjinj7@gmail.com','010-6426-3539','--','addr03' );");
-//        db.execSQL("insert into member(id, pw, name, email, phone, photo, addr) values ('sangjinj04', '1111', '정상진04', 'sangjinj7@gmail.com','010-6426-3539','--','addr04' );");
-//        db.execSQL("insert into member(id, pw, name, email, phone, photo, addr) values ('sangjinj05', '1111', '정상진05', 'sangjinj7@gmail.com','010-6426-3539','--','addr05' );");
-//        db.execSQL("insert into member(id, pw, name, email, phone, photo, addr) values ('sangjinj06', '1111', '정상진06', 'sangjinj7@gmail.com','010-6426-3539','--','addr06' );");
-//        db.execSQL("insert into member(id, pw, name, email, phone, photo, addr) values ('sangjinj07', '1111', '정상진07', 'sangjinj7@gmail.com','010-6426-3539','--','addr07' );");
-//        db.execSQL("insert into member(id, pw, name, email, phone, photo, addr) values ('sangjinj08', '1111', '정상진08', 'sangjinj7@gmail.com','010-6426-3539','--','addr08' );");
-//        db.execSQL("insert into member(id, pw, name, email, phone, photo, addr) values ('sangjinj09', '1111', '정상진09', 'sangjinj7@gmail.com','010-6426-3539','--','addr09' );");
-//        db.execSQL("insert into member(id, pw, name, email, phone, photo, addr) values ('sangjinj10', '1111', '정상진10', 'sangjinj7@gmail.com','010-6426-3539','--','addr10' );");
-//        db.execSQL("insert into member(id, pw, name, email, phone, photo, addr) values ('sangjinj11', '1111', '정상진01', 'sangjinj7@gmail.com','010-6426-3539','--','addr11' );");
-//
-//    }
-//
-//    @Override
-//    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-//        db.execSQL("drop table if exist " + TABLE_NAME);
-//        this.onCreate(db);
-//    }
+
 
     public void insert(MemberBean bean){
 

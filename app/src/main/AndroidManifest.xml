@@ -48,7 +48,8 @@
 
         <activity
             android:name=".member.MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
+            android:label="@string/title_activity_maps" />
+        <activity android:name=".member.GuestListActivity"></activity>
     </application>
 
 </manifest>

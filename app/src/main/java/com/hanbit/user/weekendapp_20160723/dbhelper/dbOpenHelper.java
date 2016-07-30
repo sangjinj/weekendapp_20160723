@@ -14,7 +14,7 @@ public class dbOpenHelper extends SQLiteOpenHelper {
     public dbOpenHelper(Context context) {
 
         //2번째 인자는 만들어지는 sqlite파일 이름이고 4번째 인자는 개발자가 만든 sqlite3버전이다.1
-        super(context, "sangjinj02.sqlite", null, 1);
+        super(context, "sangjinj02.sqlite", null, 5);
         this.context = context;
     }
     //최초에 기존에 없었던 db가 새롭게 만들어질때 1번 호출
@@ -40,8 +40,11 @@ public class dbOpenHelper extends SQLiteOpenHelper {
     //이미 배포했던 db에 변경이 있을경우 호출된다.
     //주로 버전의 변경이 있을때 호출
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        System.out.println("######################### onUpgrade ##################################");
+        System.out.println("######################### onUpgrade1 ##################################");
         //db.execSQL("CREATE TABLE member (id text primary key, pw text, name text, email text, phone text, photo text, addr text);");
+        db.execSQL("create table guest(_id integer primary key autoincrement, name text, phone text);");
+
+
     }
 
 }

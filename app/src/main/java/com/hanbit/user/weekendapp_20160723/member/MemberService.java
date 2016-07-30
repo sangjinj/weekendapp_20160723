@@ -13,11 +13,12 @@ public interface MemberService {
     public boolean login(MemberBean bean);
     public int count();
     public ArrayList<MemberBean> list();
+    public ArrayList<MemberBean> guestlist();
     public ArrayList<MemberBean> findByName(String name);
     public MemberBean findByID(String id);
     /*update : DB정보를 수정*/
     public void update(MemberBean bean);
     /*delete : DB정보를 삭제*/
     public void delete(String id);
-
+    
 }

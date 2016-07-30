@@ -44,7 +44,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Intent intent = getIntent();
         // Add a marker in Sydney and move the camera
         String pos = intent.getExtras().getString("pos");
-        String[] temp = pos.split("\\,");
+        String[] temp = pos.split(",");
         double temp1 = Double.parseDouble(temp[0]);
         double temp2 = Double.parseDouble(temp[1]);
         Log.d("temp1",temp1+"");

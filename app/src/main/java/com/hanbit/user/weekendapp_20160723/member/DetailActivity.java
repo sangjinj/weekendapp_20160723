@@ -63,7 +63,7 @@ public class DetailActivity extends Activity implements View.OnClickListener{
                 break;
             case R.id.btMap:
                 Intent intent = new Intent(getApplicationContext(),MapsActivity.class);
-                memberBean.setAddr("37.559768,126.94230800000003");
+                memberBean.setAddr("37.5524589,126.93782620000002");
                 intent.putExtra("pos",memberBean.getAddr());
                 //,126.94230800000003
                 startActivity(intent);
