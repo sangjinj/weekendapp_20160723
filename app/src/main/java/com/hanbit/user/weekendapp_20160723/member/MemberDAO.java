@@ -8,7 +8,6 @@ import android.util.Log;
 import com.hanbit.user.weekendapp_20160723.dbhelper.dbOpenHelper;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by hb on 2016-07-23.
@@ -105,11 +104,11 @@ public class MemberDAO{
         }
         return count;
     }
-    public List<MemberBean> list(){
+    public ArrayList<MemberBean> list(){
         String sql  = "select * from member;";
         SQLiteDatabase db = helper.getReadableDatabase();
         Cursor cursor = db.rawQuery(sql,null);
-        List<MemberBean> tempArray = new ArrayList<MemberBean>();
+        ArrayList<MemberBean> tempArray = new ArrayList<MemberBean>();
 
 
         while (cursor.moveToNext()){
@@ -126,11 +125,11 @@ public class MemberDAO{
         return tempArray;
     }
 
-    public List<MemberBean> findByName(String name){
+    public ArrayList<MemberBean> findByName(String name){
         String sql  = "select * from member where "+NAME+"= '"+name+"';";
         SQLiteDatabase db = helper.getReadableDatabase();
         Cursor cursor = db.rawQuery(sql,null);
-        List<MemberBean> tempArray = new ArrayList<MemberBean>();
+        ArrayList<MemberBean> tempArray = new ArrayList<MemberBean>();
         while (cursor.moveToNext()){
             MemberBean temp  = new MemberBean();
             temp.setId(cursor.getString(cursor.getColumnIndex(ID)));

@@ -2,6 +2,7 @@ package com.hanbit.user.weekendapp_20160723.member;
 import android.content.Context;
 import android.util.Log;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -67,12 +68,12 @@ public class MemberServiceImpl implements MemberService{
     }
 
     @Override
-    public List<MemberBean> list() {
+    public ArrayList<MemberBean> list() {
         return dao.list();
     }
 
     @Override
-    public List<MemberBean> findByName(String name) {
+    public ArrayList<MemberBean> findByName(String name) {
         return dao.findByName(name);
     }
 

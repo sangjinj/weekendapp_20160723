@@ -1,6 +1,6 @@
 package com.hanbit.user.weekendapp_20160723.member;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Created by hb on 2016-07-23.
@@ -12,8 +12,8 @@ public interface MemberService {
     /*Read : DB정보를 조회*/
     public boolean login(MemberBean bean);
     public int count();
-    public List<MemberBean> list();
-    public List<MemberBean> findByName(String name);
+    public ArrayList<MemberBean> list();
+    public ArrayList<MemberBean> findByName(String name);
     public MemberBean findByID(String id);
     /*update : DB정보를 수정*/
     public void update(MemberBean bean);
