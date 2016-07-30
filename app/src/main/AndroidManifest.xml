@@ -18,7 +18,8 @@
         <activity android:name=".member.JoinActivity" />
         <activity android:name=".member.LoginActivity" />
         <activity android:name=".contact.ContactActivity" />
-        <activity android:name=".member.MemberListActivity"></activity>
+        <activity android:name=".member.MemberListActivity" />
+        <activity android:name=".member.DetailActivity"></activity>
     </application>
 
 </manifest>
