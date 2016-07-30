@@ -10,11 +10,15 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.hanbit.user.weekendapp_20160723.dbhelper.dbOpenHelper;
+import com.hanbit.user.weekendapp_20160723.member.CountActivity;
+import com.hanbit.user.weekendapp_20160723.member.FindActivity;
 import com.hanbit.user.weekendapp_20160723.member.JoinActivity;
 import com.hanbit.user.weekendapp_20160723.member.LoginActivity;
 import com.hanbit.user.weekendapp_20160723.member.MemberDAO;
+import com.hanbit.user.weekendapp_20160723.member.MemberListActivity;
 import com.hanbit.user.weekendapp_20160723.member.MemberService;
 import com.hanbit.user.weekendapp_20160723.member.MemberServiceImpl;
+import com.hanbit.user.weekendapp_20160723.member.UpdateActivity;
 
 public class MainActivity extends Activity implements View.OnClickListener{
     Button btAdd,btDelete,btUpdate,btFind,btList,btCount,btLogin,btJoin;
@@ -82,19 +86,19 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 break;
             case R.id.btUpdate :
                 Toast.makeText(MainActivity.this,"btUpdate",Toast.LENGTH_LONG).show();
-                this.startActivity(new Intent(this, LoginActivity.class));
+                this.startActivity(new Intent(this, UpdateActivity.class));
                 break;
             case R.id.btFind :
                 Toast.makeText(MainActivity.this,"btFind",Toast.LENGTH_LONG).show();
-                this.startActivity(new Intent(this, LoginActivity.class));
+                this.startActivity(new Intent(this, FindActivity.class));
                 break;
             case R.id.btList :
                 Toast.makeText(MainActivity.this,"btList",Toast.LENGTH_LONG).show();
-                this.startActivity(new Intent(this, LoginActivity.class));
+                this.startActivity(new Intent(this, MemberListActivity.class));
                 break;
             case R.id.btCount :
                 Toast.makeText(MainActivity.this,"btCount",Toast.LENGTH_LONG).show();
-                this.startActivity(new Intent(this, LoginActivity.class));
+                this.startActivity(new Intent(this, CountActivity.class));
                 break;
             case R.id.btLogin :
                 System.out.println("--------------------------");

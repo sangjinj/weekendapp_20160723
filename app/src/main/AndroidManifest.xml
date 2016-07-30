@@ -19,7 +19,11 @@
         <activity android:name=".member.LoginActivity" />
         <activity android:name=".contact.ContactActivity" />
         <activity android:name=".member.MemberListActivity" />
-        <activity android:name=".member.DetailActivity"></activity>
+        <activity android:name=".member.DetailActivity" />
+        <activity android:name=".member.CountActivity" />
+        <activity android:name=".member.AddActivity" />
+        <activity android:name=".member.FindActivity" />
+        <activity android:name=".member.UpdateActivity"></activity>
     </application>
 
 </manifest>

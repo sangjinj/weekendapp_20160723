@@ -126,11 +126,17 @@ public class MemberDAO{
     }
 
     public ArrayList<MemberBean> findByName(String name){
-        String sql  = "select * from member where "+NAME+"= '"+name+"';";
+        String sql  = "select " +
+                String.format("%s,%s,%s,%s,%s,%s,%s",ID,NAME,EMAIL,PW,PHONE,PHOTO,ADDR) +
+                " from member where "+NAME+"= '"+name+"';";
         SQLiteDatabase db = helper.getReadableDatabase();
         Cursor cursor = db.rawQuery(sql,null);
         ArrayList<MemberBean> tempArray = new ArrayList<MemberBean>();
-        while (cursor.moveToNext()){
+        if(cursor != null){
+            Log.d("DAO LIST 조회결과 : " ,"SUCCESS");
+            cursor.moveToFirst();
+        }
+        do{
             MemberBean temp  = new MemberBean();
             temp.setId(cursor.getString(cursor.getColumnIndex(ID)));
             temp.setName(cursor.getString(cursor.getColumnIndex(NAME)));
@@ -140,7 +146,7 @@ public class MemberDAO{
             temp.setPhoto(cursor.getString(cursor.getColumnIndex(PHOTO)));
             temp.setAddr(cursor.getString(cursor.getColumnIndex(ADDR)));
             tempArray.add(temp);
-        }
+        }while (cursor.moveToNext());
         return tempArray;
     }
 
