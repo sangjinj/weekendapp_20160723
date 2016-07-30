@@ -1,6 +1,7 @@
 package com.hanbit.user.weekendapp_20160723.member;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -35,6 +36,7 @@ public class LoginActivity extends Activity implements View.OnClickListener{
         member.setPw(pw);
         if(service.login(member)){
             Toast.makeText(LoginActivity.this,"로그인성공",Toast.LENGTH_SHORT).show();
+            this.startActivity(new Intent(this, MemberListActivity.class));
         }else{
             Toast.makeText(LoginActivity.this,"로그인실패",Toast.LENGTH_SHORT).show();
         }
