@@ -13,7 +13,7 @@ public class dbOpenHelper extends SQLiteOpenHelper {
 
     public dbOpenHelper(Context context) {
 
-        //2번째 인자는 만들어지는 sqlite파일 이름이고 4번째 인자는 개발자가 만든 sqlite3버전이다.
+        //2번째 인자는 만들어지는 sqlite파일 이름이고 4번째 인자는 개발자가 만든 sqlite3버전이다.1
         super(context, "sangjinj02.sqlite", null, 1);
         this.context = context;
     }
