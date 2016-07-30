@@ -1,7 +1,9 @@
 package com.hanbit.user.weekendapp_20160723.member;
 
-import android.support.v4.app.FragmentActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -9,10 +11,12 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.hanbit.user.weekendapp_20160723.R;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +41,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
+        Intent intent = getIntent();
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        String pos = intent.getExtras().getString("pos");
+        String[] temp = pos.split("\\,");
+        double temp1 = Double.parseDouble(temp[0]);
+        double temp2 = Double.parseDouble(temp[1]);
+        Log.d("temp1",temp1+"");
+        Log.d("temp2",temp2+"");
+        LatLng position = new LatLng(temp1, temp2);
+
+        mMap.addMarker(new MarkerOptions().position(position).title("Marker in Sydney"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(position,16));
     }
 }

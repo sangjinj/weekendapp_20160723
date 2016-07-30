@@ -62,7 +62,11 @@ public class DetailActivity extends Activity implements View.OnClickListener{
                 phone.directCall(memberBean.getPhone());
                 break;
             case R.id.btMap:
-                //startActivity(new Intent(this,MapActivity.class));
+                Intent intent = new Intent(getApplicationContext(),MapsActivity.class);
+                memberBean.setAddr("37.559768,126.94230800000003");
+                intent.putExtra("pos",memberBean.getAddr());
+                //,126.94230800000003
+                startActivity(intent);
                 break;
             case R.id.btSms:
                 break;
