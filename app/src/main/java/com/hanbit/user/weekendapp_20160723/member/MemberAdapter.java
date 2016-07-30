@@ -18,6 +18,8 @@ import java.util.ArrayList;
 public class MemberAdapter extends BaseAdapter {
     ArrayList<MemberBean> list;
     LayoutInflater inflater;
+    private Context mContext;
+
     private int[] photos={
             R.drawable.cupcake,
             R.drawable.donut,
@@ -33,6 +35,8 @@ public class MemberAdapter extends BaseAdapter {
     public MemberAdapter(Context context, ArrayList<MemberBean> list){
         this.list = list;
         this.inflater = LayoutInflater.from(context);
+        this.mContext = context;
+
     }
     @Override
     public int getCount() {
@@ -62,6 +66,11 @@ public class MemberAdapter extends BaseAdapter {
         }else{
             holder = (ViewHolder) v.getTag();
         }
+    //holder.ivPhoto
+
+
+
+
         return v;
     }
     static class ViewHolder{

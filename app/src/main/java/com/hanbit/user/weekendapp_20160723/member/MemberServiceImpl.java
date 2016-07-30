@@ -78,6 +78,12 @@ public class MemberServiceImpl implements MemberService{
     @Override
     public MemberBean findByID(String id) {
 
+        if(dao.findById(id) ==null){
+            Log.d("DAO 에서 넘어온 값이 : ","NULL");
+        }else{
+            Log.d("DAO 에서 넘어온 값이 : ","NOT NULL");
+        }
+
         return dao.findById(id);
     }
 

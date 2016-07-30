@@ -29,9 +29,7 @@ public class MemberListActivity extends Activity {
         ArrayList<MemberBean> list = service.list();
         lv_memberList.setAdapter(new MemberAdapter(this,list));
         lv_memberList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-
-            public String id;
+        public String id;
 
             @Override
             public void onItemClick(AdapterView<?> parent, View v, int i, long l) {
