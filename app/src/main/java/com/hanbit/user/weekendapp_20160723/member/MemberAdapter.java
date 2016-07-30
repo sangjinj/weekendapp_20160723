@@ -1,6 +1,7 @@
 package com.hanbit.user.weekendapp_20160723.member;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,8 +19,6 @@ import java.util.ArrayList;
 public class MemberAdapter extends BaseAdapter {
     ArrayList<MemberBean> list;
     LayoutInflater inflater;
-    private Context mContext;
-
     private int[] photos={
             R.drawable.cupcake,
             R.drawable.donut,
@@ -30,14 +29,14 @@ public class MemberAdapter extends BaseAdapter {
             R.drawable.icecream,
             R.drawable.jellybean,
             R.drawable.kitkat,
-            R.drawable.lollipop
+            R.drawable.lollipop,
+            R.drawable.chrysanthemum
     };
-    public MemberAdapter(Context context, ArrayList<MemberBean> list){
+    public MemberAdapter(Context context,ArrayList<MemberBean> list) {
         this.list = list;
         this.inflater = LayoutInflater.from(context);
-        this.mContext = context;
-
     }
+
     @Override
     public int getCount() {
         return list.size();
@@ -56,7 +55,7 @@ public class MemberAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View v, ViewGroup g) {
         ViewHolder holder;
-        if(v == null){
+        if(v==null){
             v = inflater.inflate(R.layout.member_list,null);
             holder = new ViewHolder();
             holder.ivPhoto = (ImageView) v.findViewById(R.id.iv_photo);
@@ -66,17 +65,16 @@ public class MemberAdapter extends BaseAdapter {
         }else{
             holder = (ViewHolder) v.getTag();
         }
-    //holder.ivPhoto
-
-
-
-
+        Log.d("어답터에서 체크한 이름["+i+"]",list.get(i).getName());
+        holder.ivPhoto.setImageResource(photos[i]);
+        holder.tvName.setText(list.get(i).getName());
+        holder.tvPhone.setText(list.get(i).getPhone());
         return v;
     }
+    // inner class
     static class ViewHolder{
         ImageView ivPhoto;
         TextView tvName;
         TextView tvPhone;
     }
-
 }

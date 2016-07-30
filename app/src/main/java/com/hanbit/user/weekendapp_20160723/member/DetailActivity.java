@@ -13,12 +13,15 @@ public class DetailActivity extends Activity implements View.OnClickListener{
     MemberService memberService;
     MemberBean memberBean;
     TextView tvID, tvPW, tvName, tvEmail,tvPhone,tvPhoto,tvAddr;
+
     Button btPhone, btMap, btSms, btList;
+    Phone phone;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         memberService = new MemberServiceImpl(this.getApplicationContext());
+        phone = new Phone(this,this);
         Intent intent = this.getIntent();
         String id = intent.getExtras().getString("id");
         memberBean = memberService.findByID(id);
@@ -56,8 +59,10 @@ public class DetailActivity extends Activity implements View.OnClickListener{
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btPhone:
+                phone.directCall(memberBean.getPhone());
                 break;
             case R.id.btMap:
+                //startActivity(new Intent(this,MapActivity.class));
                 break;
             case R.id.btSms:
                 break;

@@ -24,7 +24,7 @@ public class MemberListActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_member_list);
 
-        lv_memberList = (ListView) findViewById(R.id.iv_memberlist);
+        lv_memberList = (ListView) findViewById(R.id.lv_memberlist);
         service = new MemberServiceImpl(this.getApplicationContext());
         ArrayList<MemberBean> list = service.list();
         lv_memberList.setAdapter(new MemberAdapter(this,list));
